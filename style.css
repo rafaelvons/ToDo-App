@@ -1,0 +1,117 @@
+
+    .container {
+        background: linear-gradient(135deg, #153677, #4e085f);
+        margin: auto;
+        padding: 10px;
+        width: 100%;
+        min-height: 100vh;
+    }
+
+    .todo-app {
+        width: 100%;
+        padding: 40px 30px 70px;
+        margin: 100px auto 20px;
+        background-color: #fff;
+        max-width: 540px;
+        border-radius: 10px;
+        
+    }
+
+    .todo-app h2 {
+        color: #002765;
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: 20px;
+        font-size: 1.7rem;
+    }
+
+    .fas.fa-list {
+        padding-left: 5px;
+        font-size: 1.4rem;
+    }
+
+    .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #edeef0;
+        border-radius: 30px;
+        padding-left: 20px;
+        margin-bottom: 25px;
+    }
+
+    input {
+        flex: 1;
+        border: none;
+        outline: none;
+        background: transparent !important;
+        padding: 10px;
+        margin-right: 10px; 
+    }
+
+    button {
+        border: none !important;
+        outline: none !important;
+        padding: 16px 50px;
+        background-color: #3498db;
+        color: aliceblue;
+        font-size: 16px !important;
+        cursor: pointer;
+        border-radius: 30px;
+    }
+
+    ul {
+        padding: 0;
+        list-style: none;
+    }
+
+    li {
+        font-size: 1.5rem;
+        padding: 8px;
+        user-select: none !important;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+
+    li::before {
+        content: '\f10c';
+        font-family: 'Font Awesome\ 6 Free';
+        margin-right: 5px;
+        color: #3498db;
+        font-size: 1.4rem;
+    }
+
+    li.checked {
+        color: #555;
+    }
+
+    li.checked::before {
+        content: '\f058';
+        font-family: 'Font Awesome\ 6 Free';
+        margin-right: 5px;
+        color: #3498db;
+        text-decoration: none;
+    }
+
+    li span {
+        margin-left: 5px;
+        text-decoration: none;
+    }
+
+    li.checked span {
+        text-decoration: line-through;
+    
+    }
+        
+    li.checked .delete-icon {
+        text-decoration: none; /* Ubah warna ikon ketika status checked */
+    }
+    li .delete-icon {
+        margin-left: auto; /* Push the delete icon to the right */
+        cursor: pointer;
+        color:#3498db;
+        font-size: 1.4rem;
+    }
+
+    

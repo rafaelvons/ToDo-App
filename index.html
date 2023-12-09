@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="todo-app">
+        <h2>To Do App</h2>
+        <i class="fas fa-list"></i>
+        <div class="row">
+            <input type="text" name="" id="input-box" placeholder="Add Your Task">
+            <button onclick="addButton()">Add</button>
+        </div>
+        <ul id="list-container">
+          <!-- <li class="checked"><span>Task 1</span></li>
+          <li><span>Task 2</span></li>
+          <li><span>Task 3</span></li> -->
+        </ul>
+      </div>
+    </div>
+    <script>
+        const inputBox = document.getElementById("input-box");
+        const listContainer = document.getElementById("list-container");
+    
+        function addButton() {
+            if (inputBox.value === '') {
+                alert("You must write something!");
+            } else {
+                let li = document.createElement("li");
+                let span = document.createElement("span");
+                span.innerHTML = inputBox.value;
+                li.appendChild(span);
+    
+                let deleteIcon = document.createElement("span");
+                deleteIcon.classList.add("delete-icon", "fas", "fa-trash-alt");
+    
+                deleteIcon.addEventListener("click", function() {
+                    li.remove(); // Remove the task when the delete icon is clicked
+                });
+    
+                li.appendChild(deleteIcon);
+                listContainer.appendChild(li);
+            }
+            inputBox.value = '';
+        }
+    
+        listContainer.addEventListener("click", function (e) {
+            if (e.target.tagName === "SPAN" && e.target.classList.contains("delete-icon")) {
+                // If the clicked element is the delete icon
+                e.stopPropagation(); // Prevent the li click event from being triggered
+                e.target.parentElement.remove(); // Remove the li element
+            } else if (e.target.tagName === "LI") {
+                e.target.classList.toggle("checked");
+    
+                // Toggle the text-decoration manually for the span element
+                const span = e.target.querySelector("span");
+                if (span) {
+                    if (e.target.classList.contains("checked")) {
+                        span.style.textDecoration = "line-through";
+                        span.style.color = "#555";
+                    } else {
+                        span.style.textDecoration = "none";
+                        span.style.color = ""; // Set to an empty string to remove the inline style
+                    }
+                }
+            }
+        });
+    </script>
+    
+    
+    
+  </body>
+</html>
