@@ -114,4 +114,16 @@
         font-size: 1.4rem;
     }
 
+    @media screen and (max-width: 768px) {
+        .todo-app {
+            padding: 20px; 
+            max-width: fit-content;/* Adjusted padding for smaller screens */
+        }
     
+        .row {
+            padding-left: 10px; /* Adjusted padding for smaller screens */
+        }
+        li {
+            font-size: 1.2rem;
+        }
+    }
